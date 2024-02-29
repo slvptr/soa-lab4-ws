@@ -17,13 +17,13 @@ import java.security.cert.X509Certificate;
 
 @Stateless
 public class GroupService {
-    private final String BASE_URL = "https://localhost:8081/api/v1/groups/";
+    private final String BASE_URL = "http://localhost:1488/api/v1/groups/";
     private final GroupAPI groupAPI;
 
     public GroupService() throws Exception {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .client(getTlsTrustOkHttpClient())
+//                .client(getTlsTrustOkHttpClient())
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
 
